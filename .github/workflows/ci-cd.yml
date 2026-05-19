@@ -1,0 +1,52 @@
+name: MLOps CI/CD Pipeline
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.9"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Train model (for tests)
+        run: python model/train.py
+
+      - name: Run Tests
+        run: pytest tests/ -v
+
+  deploy:
+    needs: test
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - id: "auth"
+        name: "Authenticate to Google Cloud"
+        uses: "google-github-actions/auth@v2"
+        with:
+          credentials_json: "${{ secrets.GCP_CREDENTIALS }}"
+
+      - name: "Set up Cloud SDK"
+        uses: "google-github-actions/setup-gcloud@v2"
+
+      - name: "Build and Deploy API to Cloud Run"
+        run: |-
+          gcloud builds submit --tag gcr.io/${{ secrets.GCP_PROJECT_ID }}/mlops-api .
+          gcloud run deploy mlops-api \
+            --image gcr.io/${{ secrets.GCP_PROJECT_ID }}/mlops-api \
+            --platform managed \
+            --region us-central1 \
+            --allow-unauthenticated
