@@ -24,6 +24,8 @@ jobs:
         run: python model/train.py
 
       - name: Run Tests
+        env:
+          PYTHONPATH: .
         run: pytest tests/ -v
 
   deploy:
