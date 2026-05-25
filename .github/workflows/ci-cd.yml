@@ -1,4 +1,4 @@
-name: MLOps CI/CD Pipeline
+name: PulseML MLOps CI/CD
 
 on:
   push:
@@ -7,8 +7,7 @@ on:
     branches: ["main"]
 
 permissions:
-  contents: "read"
-  id-token: "write"
+  contents: read
 
 jobs:
   test:
@@ -19,12 +18,15 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.9"
+          python-version: "3.10"
 
       - name: Install dependencies
-        run: pip install -r requirements.txt
+        run: |
+          pip install -r requirements.txt
+          pip install -r api/requirements.txt
+          pip install pytest
 
-      - name: Train model (for tests)
+      - name: Train dummy model for testing
         run: python model/train.py
 
       - name: Run Tests
@@ -38,22 +40,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
-      - id: "auth"
-        name: "Authenticate to Google Cloud"
-        uses: "google-github-actions/auth@v2"
         with:
-          workload_identity_provider: "${{ secrets.WIF_PROVIDER }}"
-          service_account: "${{ secrets.WIF_SERVICE_ACCOUNT }}"
+          fetch-depth: 0
+          lfs: true
 
-      - name: "Set up Cloud SDK"
-        uses: "google-github-actions/setup-gcloud@v2"
+      - name: Install Hugging Face CLI
+        run: pip install huggingface_hub
 
-      - name: "Build and Deploy API to Cloud Run"
+      - name: Deploy API to Hugging Face
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: |-
-          gcloud builds submit --tag gcr.io/${{ secrets.GCP_PROJECT_ID }}/mlops-api .
-          gcloud run deploy mlops-api \
-            --image gcr.io/${{ secrets.GCP_PROJECT_ID }}/mlops-api \
-            --platform managed \
-            --region us-central1 \
-            --allow-unauthenticated
+          huggingface-cli upload gerakp/pulseml-api ./api . --repo-type space --token $HF_TOKEN
+
+      - name: Deploy Dashboard to Hugging Face
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: |-
+          huggingface-cli upload gerakp/pulseml-dashboard ./dashboard . --repo-type space --token $HF_TOKEN

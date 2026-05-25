@@ -1,20 +1,15 @@
-FROM python:3.9-slim
+FROM python:3.10-slim
 
 WORKDIR /app
 
-# Dependencias
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Codigo de la API
-COPY main.py /app/api/main.py
+# Copy everything from current dir to /app
+COPY . .
 
-# Modelo entrenado (se copia desde el build context)
-COPY ../model/model.joblib /app/model/model.joblib
+EXPOSE 7860
 
-ENV PYTHONPATH=/app
-ENV MODEL_PATH=/app/model/model.joblib
-
-EXPOSE 8000
-
-CMD ["uvicorn", "api.main:app", "--host", "0.0.0.0", "--port", "8000"]
+# Fixed: point to main:app since main.py is now in the root of the space
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "7860"]
+# Rebuild trigger: 2026-05-25 19:28
