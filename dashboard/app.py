@@ -103,21 +103,31 @@ with col_xai:
 # --- Arquitectura del Sistema ---
 st.markdown("---")
 with st.expander("🏗️ Ver Arquitectura Técnica del Ecosistema"):
-    st.markdown("""
-    ```mermaid
-    graph LR
-        subgraph LocalLab [Local Lab / PC]
-            A[Entrenamiento<br/>RandomForest] --> B[MLflow<br/>Tracking]
-            A --> C[Export Joblib]
-        end
+    st.graphviz_chart("""
+    digraph G {
+        rankdir=LR;
+        node [shape=box, style=filled, color="#30363d", fontcolor=white, fontname="Inter"];
+        edge [color="#8b949e"];
         
-        subgraph Cloud [Hugging Face Spaces]
-            D[PulseML API<br/>FastAPI]
-            E[PulseML Dashboard<br/>Streamlit]
-            E -- JSON/HTTPS --> D
-        end
+        subgraph cluster_local {
+            label = "Local Lab / PC";
+            style=filled; color="#161b22";
+            A [label="Entrenamiento\nRandomForest"];
+            B [label="MLflow\nTracking"];
+            C [label="Export Joblib"];
+            A -> B;
+            A -> C;
+        }
         
-        C -- Upload --> D
-    ```
+        subgraph cluster_cloud {
+            label = "Hugging Face Spaces";
+            style=filled; color="#161b22";
+            D [label="PulseML API\nFastAPI"];
+            E [label="PulseML Dashboard\nStreamlit"];
+            E -> D [label="Inferencia"];
+        }
+        
+        C -> D [label="Sync"];
+    }
     """)
     st.info("Esta arquitectura demuestra un ciclo de vida MLOps completo: Tracking en local -> Empaquetado -> Despliegue en Cloud (Inferencia y UI).")
