@@ -35,6 +35,8 @@ class PredictionRequest(BaseModel):
 class PredictionResponse(BaseModel):
     prediction: int
     label: str
+    feature_importance: dict
+    model_type: str
 
 LABEL_MAP = {0: "setosa", 1: "versicolor", 2: "virginica"}
 
@@ -51,12 +53,19 @@ def health():
 @app.post("/predict", response_model=PredictionResponse)
 def predict(req: PredictionRequest):
     if model is None:
-        return {"prediction": -1, "label": "error: model not loaded"}
+        return {"prediction": -1, "label": "error: model not loaded", "feature_importance": {}, "model_type": "none"}
     
     features = [[req.sepal_length, req.sepal_width, req.petal_length, req.petal_width]]
-    pred = int(model.predict(features)[0])
+    prediction = model.predict(features)
     
-    return PredictionResponse(
-        prediction=pred,
-        label=LABEL_MAP.get(pred, "unknown")
-    )
+    # Extraer importancia de características real del modelo
+    feature_names = ["sepal_length", "sepal_width", "petal_length", "petal_width"]
+    importances = model.feature_importances_.tolist()
+    importance_map = {name: val for name, val in zip(feature_names, importances)}
+
+    return {
+        "prediction": int(prediction[0]),
+        "label": LABEL_MAP.get(int(prediction[0]), "unknown"),
+        "feature_importance": importance_map,
+        "model_type": type(model).__name__
+    }
