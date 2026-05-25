@@ -51,10 +51,10 @@ jobs:
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: |-
-          huggingface-cli upload gerakp/pulseml-api ./api . --repo-type space --token ${{ secrets.HF_TOKEN }}
+          hf upload gerakp/pulseml-api ./api . --repo-type space --token $HF_TOKEN
 
       - name: Deploy Dashboard to Hugging Face
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: |-
-          huggingface-cli upload gerakp/pulseml-dashboard ./dashboard . --repo-type space --token ${{ secrets.HF_TOKEN }}
+          hf upload gerakp/pulseml-dashboard ./dashboard . --repo-type space --token $HF_TOKEN
