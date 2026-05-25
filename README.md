@@ -1,71 +1,30 @@
-# 🚀 MLOps TFG — Ecosistema Automatizado
+# 💎 PulseML Pro: Ecosistema MLOps End-to-End
 
-> **Prototipo de ecosistema MLOps automatizado con despliegue continuo y dashboard de observabilidad analítica mediante MLflow y Streamlit.**
+Este proyecto es un prototipo tecnológico de grado profesional desarrollado para el **Trabajo Final de Grado (TFG)** en la Licenciatura en Ciencia de Datos (Universidad Siglo 21). Implementa un ecosistema MLOps completo (Nivel 2 de Madurez), orquestado íntegramente en la nube mediante GitOps.
 
-**Autor:** Gerardo Juan Martín Serrano Gallego  
-**Carrera:** Licenciatura en Ciencia de Datos — Universidad Siglo 21  
-**Tipo:** Prototipado Tecnológico
+## 🚀 Enlaces en Vivo
+*   **Inference API:** [PulseML API (FastAPI)](https://huggingface.co/spaces/gerakp/pulseml-api)
+*   **Observability Dashboard:** [PulseML Pro Dashboard (Streamlit)](https://huggingface.co/spaces/gerakp/pulseml-dashboard)
+
+## ✨ Características Principales
+*   **Servicio de Inferencia:** API RESTful construida con FastAPI, optimizada para baja latencia y tipado con Pydantic.
+*   **Observabilidad & XAI:** Panel interactivo con **Explainability (Feature Importance)** dinámica extraída directamente del modelo en tiempo real.
+*   **Monitoreo de Salud:** Módulo de detección de **Data Drift** (Deriva de Datos) con visualizaciones comparativas de distribución (Entrenamiento vs Inferencia).
+*   **GitOps (CI/CD):** Pipeline 100% automatizado mediante GitHub Actions que valida el código (Pytest) y despliega a Hugging Face on-push.
+*   **Tracking de Experimentos:** Ciclo de vida gestionado con **MLflow** local (SQLite) para registro de métricas y artefactos.
+*   **Contenerización:** Despliegue basado en Docker para asegurar reproducibilidad total.
+
+## 🛠️ Elementos "Hardcodeados" (Transparencia Académica)
+Para esta Prueba de Concepto (PoC), se han mantenido como estáticos:
+1.  **Repo Config:** Los nombres de los espacios (`gerakp/pulseml-api`) están fijos en la configuración de CI/CD.
+2.  **Drift Baseline:** Los gráficos de monitoreo utilizan una comparativa entre el dataset de entrenamiento real y una distribución de inferencia simulada para demostrar capacidad operativa.
+3.  **Local Storage:** El backend de MLflow es local; escalable a servidores remotos (S3/GCS).
+
+## 📈 Próximos Pasos (Nice to Have)
+- [ ] **A/B Testing:** Activar tráfico dividido entre modelos v1 y v2.
+- [ ] **Remote Registry:** Migrar los artefactos de MLflow a una nube centralizada.
+- [ ] **Alerting:** Notificaciones automáticas ante detección de anomalías en datos de entrada.
 
 ---
-
-## 📁 Estructura del Proyecto
-
-```
-mlops-tfg/
-├── model/
-│   ├── train.py              # Entrenamiento + MLflow tracking
-│   └── model.joblib           # Modelo serializado
-├── api/
-│   ├── main.py               # FastAPI inference API
-│   ├── requirements.txt
-│   └── Dockerfile
-├── dashboard/
-│   ├── app.py                # Streamlit observability dashboard
-│   └── requirements.txt
-├── mlflow/
-│   └── config.py             # Configuración centralizada MLflow
-├── tests/
-│   └── test_api.py           # Tests unitarios
-├── .github/workflows/
-│   └── ci-cd.yml             # Pipeline CI/CD con GitHub Actions
-├── .gitignore
-├── requirements.txt           # Dependencias globales
-└── README.md
-```
-
-## ⚡ Quick Start
-
-```bash
-# 1. Crear entorno virtual
-python -m venv venv
-venv\Scripts\activate        # Windows
-# source venv/bin/activate   # Linux/Mac
-
-# 2. Instalar dependencias
-pip install -r requirements.txt
-
-# 3. Entrenar el modelo (se loguea en MLflow)
-python model/train.py
-
-# 4. Levantar la API
-uvicorn api.main:app --reload
-
-# 5. En otra terminal, levantar el dashboard
-streamlit run dashboard/app.py
-
-# 6. (Opcional) Ver panel de MLflow
-mlflow ui --backend-store-uri sqlite:///mlruns.db
-```
-
-## 🛠️ Stack Tecnológico
-
-| Tecnología | Uso | Licencia |
-|-----------|-----|----------|
-| Python 3.9 | Lenguaje principal | PSF |
-| scikit-learn | Modelo de ML | BSD-3 |
-| FastAPI | API de inferencia | MIT |
-| Docker | Contenerización | Apache 2.0 |
-| GitHub Actions | CI/CD | GitHub |
-| MLflow | Tracking de experimentos | Apache 2.0 |
-| Streamlit | Dashboard de observabilidad | Apache 2.0 |
-| GCP Cloud Run | Deploy en la nube | Google |
+**Autor:** Gerardo Juan Martín Serrano Gallego  
+**TFG:** MLOps aplicado a la Gestión Analítica.
