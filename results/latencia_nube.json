@@ -1,0 +1,10 @@
+{
+  "url": "https://gerakp-pulseml-api.hf.space",
+  "solicitudes": 50,
+  "errores": 0,
+  "p50_ms": 523.2,
+  "p95_ms": 545.0,
+  "max_ms": 601.5,
+  "nota": "Medida desde un cliente en Argentina; incluye la latencia de red hasta Hugging Face.",
+  "fecha": "2026-09-25 09:49"
+}

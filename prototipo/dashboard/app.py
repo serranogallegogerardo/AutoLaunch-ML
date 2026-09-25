@@ -13,7 +13,8 @@ import streamlit as st
 
 API_URL = os.getenv("API_URL", "http://127.0.0.1:8000")
 API_KEY = os.getenv("PULSEML_API_KEY", "")
-RESULTS = Path(os.getenv("PULSEML_RESULTS", Path(__file__).resolve().parents[2] / "results"))
+RESULTS = (Path(os.environ["PULSEML_RESULTS"]) if "PULSEML_RESULTS" in os.environ
+           else Path(__file__).resolve().parents[2] / "results")
 HEADERS = {"X-API-Key": API_KEY}
 
 st.set_page_config(page_title="PulseML | Riesgo de SLA", layout="wide")
