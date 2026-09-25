@@ -1,0 +1,17 @@
+variable,psi,nivel,ks,ks_p
+contact_type,0.1212,moderado,,
+location,0.1097,moderado,,
+category,0.2656,significativo,,
+subcategory,0.2287,moderado,,
+u_symptom,0.2046,moderado,,
+impact,0.0003,estable,,
+urgency,0.0014,estable,,
+priority,0.0007,estable,,
+assignment_group,0.0776,estable,,
+opened_by,0.8735,significativo,,
+opened_hour,0.0269,estable,0.0386,2.2791074640792547e-07
+opened_weekday,0.0204,estable,0.0528,2.1082943879660834e-13
+knowledge,1.3661,significativo,0.2071,8.918790512738777e-202
+u_priority_confirmation,0.0002,estable,0.0005,1.0
+notify_email,0.0065,estable,0.0021,1.0
+score_predicho,0.2631,significativo,0.1643,9.179523046007755e-127

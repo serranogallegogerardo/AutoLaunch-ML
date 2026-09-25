@@ -1,0 +1,86 @@
+{
+  "incumplimiento_por_prioridad": {
+    "1 - Critical": [
+      185,
+      0.805
+    ],
+    "2 - High": [
+      311,
+      0.971
+    ],
+    "3 - Moderate": [
+      23681,
+      0.361
+    ],
+    "4 - Low": [
+      741,
+      0.147
+    ]
+  },
+  "cramers_v_con_objetivo": {
+    "priority": 0.179,
+    "impact": 0.136,
+    "urgency": 0.158,
+    "category": 0.329,
+    "contact_type": 0.035,
+    "assignment_group": 0.338,
+    "u_symptom": 0.392,
+    "knowledge": 0.324
+  },
+  "priority_vs_impact": 0.932,
+  "priority_vs_urgency": 0.931,
+  "hora_min": [
+    21,
+    0.164
+  ],
+  "hora_max": [
+    14,
+    0.438
+  ],
+  "top10_categorias": {
+    "Category 20": [
+      1068,
+      0.239
+    ],
+    "Category 23": [
+      1071,
+      0.475
+    ],
+    "Category 26": [
+      3270,
+      0.29
+    ],
+    "Category 32": [
+      1495,
+      0.239
+    ],
+    "Category 37": [
+      1135,
+      0.329
+    ],
+    "Category 42": [
+      3630,
+      0.199
+    ],
+    "Category 46": [
+      2243,
+      0.497
+    ],
+    "Category 53": [
+      2658,
+      0.371
+    ],
+    "Category 57": [
+      918,
+      0.388
+    ],
+    "Category 9": [
+      1141,
+      0.4
+    ]
+  },
+  "resolucion_mediana_por_clase": {
+    "0": 1.1,
+    "1": 201.4
+  }
+}

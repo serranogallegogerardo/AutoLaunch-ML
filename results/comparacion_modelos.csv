@@ -1,0 +1,4 @@
+modelo,cv_roc_auc,cv_sd,test_roc_auc,test_pr_auc,test_f1_0.5,test_precision_0.5,test_recall_0.5,test_brier,segundos
+Regresión logística,0.8157,0.0096,0.7774,0.5212,0.5061,0.4723,0.5451,0.1645,2.2
+Random Forest,0.8311,0.0089,0.7898,0.5381,0.5309,0.4836,0.5883,0.1676,11.2
+Gradient Boosting (HGB),0.8346,0.0078,0.7843,0.5463,0.5172,0.4686,0.5771,0.1626,5.1

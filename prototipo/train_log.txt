@@ -1,0 +1,12 @@
+2026/09/25 08:48:56 INFO mlflow.store.db.utils: Creating initial MLflow database tables...
+2026/09/25 08:48:56 INFO mlflow.store.db.utils: Updating database tables
+2026/09/25 08:48:58 INFO mlflow.tracking.fluent: Experiment with name 'sla_breach_techserve' does not exist. Creating a new experiment.
+{
+ "roc_auc": 0.7843,
+ "pr_auc": 0.5463,
+ "f1_umbral": 0.5196,
+ "tasa_test": 0.2291,
+ "n_train": 17136.0,
+ "n_test": 7782.0
+}
+Compuerta de calidad aprobada. Modelo publicado: 48248b4c

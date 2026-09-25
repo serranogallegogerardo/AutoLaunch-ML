@@ -1,24 +1,9 @@
-# Python
-__pycache__/
-*.py[cod]
-*.egg-info/
-dist/
-build/
-venv/
+data/
 .venv/
-
-# Model artifacts
-model/model.joblib
-mlruns/
-mlruns.db
-
-# IDE
-.vscode/
-.idea/
-
-# OS
-.DS_Store
-Thumbs.db
-
-# Env
-.env
+__pycache__/
+.pytest_cache/
+prototipo/mlruns.db
+prototipo/backups/
+results/incidentes_preparados.csv
+results/probabilidades_test.csv
+results/modelo_seleccionado.joblib

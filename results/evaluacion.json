@@ -1,0 +1,63 @@
+{
+  "modelo": "Gradient Boosting (HGB)",
+  "umbral": {
+    "criterio": "máximo F1 en validación temporal (abril 2016)",
+    "valor": 0.484,
+    "precision": 0.4582,
+    "recall": 0.5996,
+    "f1": 0.5194,
+    "matriz_confusion": [
+      [
+        4735,
+        1264
+      ],
+      [
+        714,
+        1069
+      ]
+    ]
+  },
+  "top20": {
+    "revisados": 1556,
+    "precision": 0.5283,
+    "incumplimientos_capturados": 0.461,
+    "lift": 2.31
+  },
+  "importancia": {
+    "assignment_group": 0.1438,
+    "u_symptom": 0.0418,
+    "opened_by": 0.025,
+    "priority": 0.0215,
+    "location": 0.0128,
+    "subcategory": 0.0092,
+    "category": 0.002,
+    "opened_hour": 0.0019,
+    "opened_weekday": 0.0008,
+    "urgency": 0.0001,
+    "contact_type": 0.0,
+    "u_priority_confirmation": 0.0,
+    "notify_email": 0.0,
+    "impact": 0.0,
+    "knowledge": -0.0004
+  },
+  "desempeno_mensual": [
+    {
+      "mes": "2016-05",
+      "n": 7508,
+      "tasa": 0.225,
+      "roc_auc": 0.7864
+    },
+    {
+      "mes": "2017-01",
+      "n": 94,
+      "tasa": 0.436,
+      "roc_auc": 0.668
+    },
+    {
+      "mes": "2017-02",
+      "n": 55,
+      "tasa": 0.091,
+      "roc_auc": 0.476
+    }
+  ]
+}

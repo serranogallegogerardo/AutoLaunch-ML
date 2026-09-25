@@ -1,0 +1,11 @@
+id,riesgo,probabilidad,impacto,disparador,mitigacion,responsable
+R-01,Drift de datos o de concepto degrada el modelo,5,4,PSI >= 0.25 en alguna variable o en el score,Revisión de variables con drift y reentrenamiento con datos recientes; umbral recalibrado,Ciencia de Datos
+R-02,Cambio de la tasa base de incumplimiento (42.8% a 22.9%) descalibra el umbral,4,4,Diferencia > 10 pp entre tasa esperada y observada,Recalibrar umbral con validación temporal reciente; monitorear precisión mensual,Ciencia de Datos
+R-03,Valores nuevos en categorías (grupos y usuarios) no vistos en entrenamiento,4,3,> 5% de valores no vistos en un lote,Codificación con categoría 'infrecuente'; reentrenamiento trimestral,Ciencia de Datos
+R-04,Fuga de la clave de la API,2,5,Clave publicada en repositorio o logs,Clave en variable de entorno o secreto; rotación inmediata; revisión de commits,Operaciones TI
+R-05,Suspensión del Space gratuito por inactividad,4,2,Space en estado 'sleeping',Documentar arranque en frío; plan pago si se requiere disponibilidad continua,Operaciones TI
+R-06,Pérdida de la base de MLflow (SQLite),2,4,Archivo mlruns.db corrupto o borrado,Copia diaria versionada; restauración probada (RTO 1 h),Operaciones TI
+R-07,Incompatibilidad de versiones al cargar el modelo,3,4,Error al deserializar model.joblib,Versiones fijadas en requirements; imagen Docker con las mismas versiones,Operaciones TI
+R-08,Falsos positivos saturan a los analistas,3,3,Precisión mensual < 40%,Ajustar umbral según capacidad; revisar solo el 20% de mayor riesgo,Gerencia de Operaciones
+R-09,Uso de la predicción para evaluar personas,2,4,Pedido de ranking por analista,Política de uso: la salida prioriza tickets y no evalúa desempeño,Gerencia de Operaciones
+R-10,Demora del autor en la corrección y publicación final,3,3,Hito de control vencido,Plan con hitos semanales y margen de 5 días,Autor del TFG

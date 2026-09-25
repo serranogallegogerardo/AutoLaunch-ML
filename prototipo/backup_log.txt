@@ -1,0 +1,5 @@
+Copia creada: C:\Users\gera\Desktop\ALL 02082026\workfacultad\entregaDefinitiva5\entrega-definitiva-latest\02_reproducible\prototipo\backups\20260925-090645
+modelo borrado para simular pÃ©rdida
+Restauración verificada en 0.01 s
+8904c810af2bd8745e4e95a025694b4eaec6280c59c77d247d5c8a0cff4d971e *model/artifacts/model.joblib
+11 passed in 5.30s

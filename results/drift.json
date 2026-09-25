@@ -1,0 +1,129 @@
+{
+  "umbral_psi": {
+    "estable": "<0.10",
+    "moderado": "0.10-0.25",
+    "significativo": ">=0.25"
+  },
+  "variables": [
+    {
+      "variable": "contact_type",
+      "psi": 0.1212,
+      "nivel": "moderado",
+      "ks": null,
+      "ks_p": null
+    },
+    {
+      "variable": "location",
+      "psi": 0.1097,
+      "nivel": "moderado",
+      "ks": null,
+      "ks_p": null
+    },
+    {
+      "variable": "category",
+      "psi": 0.2656,
+      "nivel": "significativo",
+      "ks": null,
+      "ks_p": null
+    },
+    {
+      "variable": "subcategory",
+      "psi": 0.2287,
+      "nivel": "moderado",
+      "ks": null,
+      "ks_p": null
+    },
+    {
+      "variable": "u_symptom",
+      "psi": 0.2046,
+      "nivel": "moderado",
+      "ks": null,
+      "ks_p": null
+    },
+    {
+      "variable": "impact",
+      "psi": 0.0003,
+      "nivel": "estable",
+      "ks": null,
+      "ks_p": null
+    },
+    {
+      "variable": "urgency",
+      "psi": 0.0014,
+      "nivel": "estable",
+      "ks": null,
+      "ks_p": null
+    },
+    {
+      "variable": "priority",
+      "psi": 0.0007,
+      "nivel": "estable",
+      "ks": null,
+      "ks_p": null
+    },
+    {
+      "variable": "assignment_group",
+      "psi": 0.0776,
+      "nivel": "estable",
+      "ks": null,
+      "ks_p": null
+    },
+    {
+      "variable": "opened_by",
+      "psi": 0.8735,
+      "nivel": "significativo",
+      "ks": null,
+      "ks_p": null
+    },
+    {
+      "variable": "opened_hour",
+      "psi": 0.0269,
+      "nivel": "estable",
+      "ks": 0.0386,
+      "ks_p": 2.2791074640792547e-07
+    },
+    {
+      "variable": "opened_weekday",
+      "psi": 0.0204,
+      "nivel": "estable",
+      "ks": 0.0528,
+      "ks_p": 2.1082943879660834e-13
+    },
+    {
+      "variable": "knowledge",
+      "psi": 1.3661,
+      "nivel": "significativo",
+      "ks": 0.2071,
+      "ks_p": 8.918790512738777e-202
+    },
+    {
+      "variable": "u_priority_confirmation",
+      "psi": 0.0002,
+      "nivel": "estable",
+      "ks": 0.0005,
+      "ks_p": 1.0
+    },
+    {
+      "variable": "notify_email",
+      "psi": 0.0065,
+      "nivel": "estable",
+      "ks": 0.0021,
+      "ks_p": 1.0
+    },
+    {
+      "variable": "score_predicho",
+      "psi": 0.2631,
+      "nivel": "significativo",
+      "ks": 0.1643,
+      "ks_p": 9.179523046007755e-127
+    }
+  ],
+  "tasa_objetivo": {
+    "train": 0.4279,
+    "test": 0.2291
+  },
+  "score_medio": {
+    "train": 0.4682,
+    "test": 0.3551
+  }
+}

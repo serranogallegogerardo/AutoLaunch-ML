@@ -1,0 +1,10 @@
+{
+ "roc_auc": 0.7843,
+ "pr_auc": 0.5463,
+ "f1_umbral": 0.5196,
+ "tasa_test": 0.2291,
+ "n_train": 17136.0,
+ "n_test": 7782.0
+}
+Compuerta de calidad RECHAZADA: el modelo no se publica.
+exit=1

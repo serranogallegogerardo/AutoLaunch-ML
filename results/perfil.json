@@ -1,0 +1,124 @@
+{
+  "crudo": {
+    "filas_eventos": 141712,
+    "atributos": 36,
+    "incidentes_unicos": 24918,
+    "filas_duplicadas_exactas": 0,
+    "tamano_mb": 46.2,
+    "estados": {
+      "Active": 38716,
+      "New": 36407,
+      "Resolved": 25751,
+      "Closed": 24985,
+      "Awaiting User Info": 14642,
+      "Awaiting Vendor": 707,
+      "Awaiting Problem": 461,
+      "Awaiting Evidence": 38,
+      "-100": 5
+    },
+    "atributos_con_faltantes": 18,
+    "atributos_mas_90pct_faltantes": [
+      "caused_by",
+      "vendor",
+      "cmdb_ci",
+      "rfc",
+      "problem_id"
+    ]
+  },
+  "incidentes": {
+    "n": 24918,
+    "tasa_incumplimiento_sla": 0.3658,
+    "desde": "2016-02-29 01:16:00",
+    "hasta": "2017-02-16 14:17:00",
+    "resolucion_horas_mediana": 22.1,
+    "resolucion_horas_p90": 381.5,
+    "resolucion_negativa": 0,
+    "sin_fecha_resolucion": 1556,
+    "resolucion_outliers_iqr": 2383,
+    "umbral_iqr_horas": 370.6,
+    "reasignaciones_media": 0.94,
+    "reaperturas_pct": 0.011,
+    "eventos_por_incidente_mediana": 5.0,
+    "faltantes_predictoras": {
+      "location": 0.0002,
+      "category": 0.0003,
+      "subcategory": 0.0003,
+      "u_symptom": 0.2212,
+      "assignment_group": 0.015,
+      "opened_by": 0.0287
+    },
+    "cardinalidad": {
+      "contact_type": 5,
+      "location": 220,
+      "category": 57,
+      "subcategory": 246,
+      "u_symptom": 502,
+      "impact": 3,
+      "urgency": 3,
+      "priority": 4,
+      "assignment_group": 69,
+      "opened_by": 207
+    },
+    "contact_type": {
+      "Phone": 24684,
+      "Self service": 161,
+      "Email": 61,
+      "IVR": 9,
+      "Direct opening": 3
+    }
+  },
+  "volumen_mensual": {
+    "2016-02": [
+      207,
+      0.353
+    ],
+    "2016-03": [
+      8995,
+      0.601
+    ],
+    "2016-04": [
+      7934,
+      0.233
+    ],
+    "2016-05": [
+      7508,
+      0.225
+    ],
+    "2016-06": [
+      5,
+      0.2
+    ],
+    "2016-07": [
+      14,
+      0.214
+    ],
+    "2016-08": [
+      15,
+      0.533
+    ],
+    "2016-09": [
+      12,
+      0.417
+    ],
+    "2016-10": [
+      16,
+      0.562
+    ],
+    "2016-11": [
+      26,
+      0.346
+    ],
+    "2016-12": [
+      37,
+      0.378
+    ],
+    "2017-01": [
+      94,
+      0.436
+    ],
+    "2017-02": [
+      55,
+      0.091
+    ]
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "modelo": "Gradient Boosting (HGB)",
+  "version": "48248b4c",
+  "umbral": 0.484,
+  "features": [
+    "contact_type",
+    "location",
+    "category",
+    "subcategory",
+    "u_symptom",
+    "impact",
+    "urgency",
+    "priority",
+    "assignment_group",
+    "opened_by",
+    "opened_hour",
+    "opened_weekday",
+    "knowledge",
+    "u_priority_confirmation",
+    "notify_email"
+  ],
+  "cat_features": [
+    "contact_type",
+    "location",
+    "category",
+    "subcategory",
+    "u_symptom",
+    "impact",
+    "urgency",
+    "priority",
+    "assignment_group",
+    "opened_by"
+  ],
+  "metricas": {
+    "roc_auc": 0.7843,
+    "pr_auc": 0.5463,
+    "f1_umbral": 0.5196,
+    "tasa_test": 0.2291,
+    "n_train": 17136.0,
+    "n_test": 7782.0
+  },
+  "quality_gate": {
+    "roc_auc_min": 0.75,
+    "pr_auc_min_sobre_azar": 2.0
+  }
+}

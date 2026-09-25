@@ -1,0 +1,38 @@
+{
+  "incidentes": 24918,
+  "estado_inicial": {
+    "New": 16396,
+    "Active": 6504,
+    "Resolved": 1819,
+    "Awaiting User Info": 193,
+    "Awaiting Problem": 6
+  },
+  "variantes_distintas": 189,
+  "top5_variantes": {
+    "New > Resolved > Closed": 6283,
+    "New > Active > Resolved > Closed": 5492,
+    "Active > Resolved > Closed": 5360,
+    "Resolved > Closed": 1816,
+    "New > Active > Awaiting User Info > Resolved > Closed": 1697
+  },
+  "pct_con_espera": 0.2338,
+  "pct_con_reasignacion": 0.4563,
+  "incumplimiento_con_espera": 0.7131,
+  "incumplimiento_sin_espera": 0.2598,
+  "incumplimiento_con_reasignacion": 0.5442,
+  "incumplimiento_sin_reasignacion": 0.2161,
+  "top_transiciones": {
+    "Resolved -> Closed": 24916,
+    "Active -> Resolved": 12049,
+    "New -> Active": 7936,
+    "New -> Resolved": 6348,
+    "Awaiting User Info -> Resolved": 4657,
+    "Active -> Awaiting User Info": 3629,
+    "New -> Awaiting User Info": 1944,
+    "Awaiting User Info -> Active": 1140,
+    "Resolved -> Active": 318,
+    "Awaiting Vendor -> Resolved": 191,
+    "Active -> Awaiting Vendor": 160,
+    "Awaiting Problem -> Resolved": 155
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "particion": {
+    "corte": "2016-05-01",
+    "train_n": 17136,
+    "test_n": 7782,
+    "train_tasa": 0.4279,
+    "test_tasa": 0.2291
+  },
+  "modelos": [
+    {
+      "modelo": "Regresión logística",
+      "cv_roc_auc": 0.8157,
+      "cv_sd": 0.0096,
+      "test_roc_auc": 0.7774,
+      "test_pr_auc": 0.5212,
+      "test_f1_0.5": 0.5061,
+      "test_precision_0.5": 0.4723,
+      "test_recall_0.5": 0.5451,
+      "test_brier": 0.1645,
+      "segundos": 2.2
+    },
+    {
+      "modelo": "Random Forest",
+      "cv_roc_auc": 0.8311,
+      "cv_sd": 0.0089,
+      "test_roc_auc": 0.7898,
+      "test_pr_auc": 0.5381,
+      "test_f1_0.5": 0.5309,
+      "test_precision_0.5": 0.4836,
+      "test_recall_0.5": 0.5883,
+      "test_brier": 0.1676,
+      "segundos": 11.2
+    },
+    {
+      "modelo": "Gradient Boosting (HGB)",
+      "cv_roc_auc": 0.8346,
+      "cv_sd": 0.0078,
+      "test_roc_auc": 0.7843,
+      "test_pr_auc": 0.5463,
+      "test_f1_0.5": 0.5172,
+      "test_precision_0.5": 0.4686,
+      "test_recall_0.5": 0.5771,
+      "test_brier": 0.1626,
+      "segundos": 5.1
+    }
+  ],
+  "seleccionado": "Gradient Boosting (HGB)",
+  "criterio": "mayor ROC-AUC media en validación cruzada (train)",
+  "pr_auc_azar": 0.2291
+}

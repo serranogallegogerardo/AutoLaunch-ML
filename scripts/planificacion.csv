@@ -1,0 +1,13 @@
+id,nombre,inicio,fin,tipo,depende_de,control
+T1,Marco teórico y estado del arte,2026-03-30,2026-05-10,tarea,,Entrega M1
+H1,Hito: entrega M1,2026-05-10,2026-05-11,hito,T1,Rúbrica M1
+T2,Metodología y relevamiento,2026-05-11,2026-05-31,tarea,H1,Entrega M2
+H2,Hito: entrega M2,2026-05-31,2026-06-01,hito,T2,Rúbrica M2
+T3,Construcción CI/CD y Docker (Sprints 1-4),2026-06-01,2026-06-14,tarea,H2,Pipeline en verde
+H3,Hito: entrega M3,2026-06-14,2026-06-15,hito,T3,Rúbrica M3
+T4,Despliegue y documento final (Sprints 5-6),2026-06-15,2026-07-21,tarea,H3,Entrega M4
+H4,Hito: entrega M4,2026-07-21,2026-07-22,hito,T4,Rúbrica M4 (0.851)
+T5,Sprint 7: dataset real y análisis CRISP-DM,2026-07-27,2026-08-09,tarea,H4,ROC-AUC >= 0.75 en prueba temporal
+T6,Sprint 8: prototipo v2 (API key y drift real),2026-08-10,2026-08-18,tarea,T5,11 pruebas pytest en verde
+T7,Sprint 9: corrección del documento y QA,2026-08-19,2026-08-28,tarea,T6,Matriz de trazabilidad cerrada
+H5,Hito: entrega corregida,2026-08-29,2026-08-30,hito,T7,Revisión humana final
